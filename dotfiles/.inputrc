@@ -1,0 +1,5 @@
+"\e[A":	history-search-backward
+"\e[B":	history-search-forward
+TAB:	menu-complete
+# Shift-TAB will reverse menu-complete
+"\e[Z":	"\e--\t"
