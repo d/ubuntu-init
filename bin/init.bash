@@ -7,6 +7,12 @@ sudo update-alternatives --set editor /usr/bin/vim.basic
 if !(type git && type make); then
 	sudo aptitude install -y git make
 fi
+if [ ! -x /usr/lib/git-core/git-subtree ]; then
+	pushd /usr/share/doc/git/contrib/subtree
+	sudo make libexecdir=/usr/lib/git-core install
+	popd
+fi
+
 git config --global color.ui auto
 git config --global push.default simple
 git config --global credential.helper 'cache --timeout=1800'
