@@ -4,8 +4,8 @@ set -e -u -x
 
 sudo update-alternatives --set editor /usr/bin/vim.basic
 
-if !(type git && type make && type hg); then
-	sudo aptitude install -y git make mercurial
+if !(type git && type make && type hg && type g++); then
+	sudo aptitude install -y git make mercurial g++
 fi
 if [ ! -x /usr/lib/git-core/git-subtree ]; then
 	pushd /usr/share/doc/git/contrib/subtree
@@ -28,3 +28,5 @@ fi
 pushd ~/src/ubuntu-init/dotfiles
 make install
 popd
+
+sudo apt-get install -y zlib1g-dev libssl-dev
