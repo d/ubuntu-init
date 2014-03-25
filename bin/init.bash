@@ -29,4 +29,4 @@ pushd ~/src/ubuntu-init/dotfiles
 make install
 popd
 
-sudo apt-get install -y zlib1g-dev libssl-dev
+sudo apt-get install -y zlib1g-dev libssl-dev libxml2-dev libxslt-dev
