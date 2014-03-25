@@ -5,7 +5,7 @@ set -e -u -x
 sudo update-alternatives --set editor /usr/bin/vim.basic
 
 if !(type git && type make && type hg && type g++); then
-	sudo aptitude install -y git make mercurial g++
+	sudo apt-get update && sudo aptitude install -y git make mercurial g++
 fi
 if [ ! -x /usr/lib/git-core/git-subtree ]; then
 	pushd /usr/share/doc/git/contrib/subtree
