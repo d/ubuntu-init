@@ -31,8 +31,10 @@ popd
 
 sudo apt-get install -y rbenv zlib1g-dev libssl-dev libxml2-dev libxslt-dev libreadline-dev
 
-mkdir -p ~/.rbenv/plugins
-git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+if [ ! -d ~/.rbenv/plugins/ruby-build ]; then
+	mkdir -p ~/.rbenv/plugins
+	git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+fi
 
 eval "$(rbenv init -)"
 if ! rbenv versions | grep 1.9.3-p545; then
