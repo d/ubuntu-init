@@ -34,6 +34,10 @@ sudo apt-get install -y rbenv zlib1g-dev libssl-dev libxml2-dev libxslt-dev libr
 if [ ! -d ~/.rbenv/plugins/ruby-build ]; then
 	mkdir -p ~/.rbenv/plugins
 	git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+else
+	pushd ~/.rbenv/plugins/ruby-build
+	git pull --ff-only
+	popd
 fi
 
 eval "$(rbenv init -)"
