@@ -44,3 +44,11 @@ eval "$(rbenv init -)"
 if ! rbenv versions | grep 1.9.3-p547; then
 	rbenv install 1.9.3-p547
 fi
+
+if !(type fish && fish --version | fgrep 2.1.0) ; then
+	declare -r fish_deb_url='http://fishshell.com/files/2.1.0/linux/Ubuntu/fish_2.1.0-1~precise_amd64.deb'
+	wget --directory-prefix /tmp --continue $fish_deb_url
+	sudo apt-get install -y libjs-jquery
+	sudo dpkg -i /tmp/$(basename $fish_deb_url)
+	sudo aptitude markauto libjs-jquery
+fi
