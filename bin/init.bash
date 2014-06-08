@@ -41,6 +41,6 @@ else
 fi
 
 eval "$(rbenv init -)"
-if ! rbenv versions | grep 1.9.3-p545; then
-	rbenv install 1.9.3-p545
+if ! rbenv versions | grep 1.9.3-p547; then
+	rbenv install 1.9.3-p547
 fi
